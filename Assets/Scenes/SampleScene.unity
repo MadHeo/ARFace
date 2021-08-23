@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452cd34d210c3427584b0e7c65ceab29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nosePrefab: {fileID: 0}
+  nosePrefab: {fileID: 919132149155446097, guid: ce0b98a76ef9044598b9cc2c479f3376, type: 3}
   leftHeadPrefab: {fileID: 0}
   rightHeadPrefab: {fileID: 0}
 --- !u!1 &2008408393
