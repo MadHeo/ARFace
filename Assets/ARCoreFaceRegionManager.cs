@@ -74,7 +74,16 @@ public class ARCoreFaceRegionManager : MonoBehaviour
                     rightHeadObject.transform.localRotation = faceRegion.pose.rotation;
 
                 }
-            }
+                //else if (regionType == ARCoreFaceRegion.ForeheadRight)
+                //{
+                //    if (!rightHeadObject)
+                //    {
+                //        rightHeadObject = Instantiate(rightHeadPrefab, sessionOrigin.trackablesParent);
+                //    }
+
+                //    rightHeadObject.transform.localPosition = faceRegion.pose.position;
+                //    rightHeadObject.transform.localRotation = faceRegion.pose.rotation;
+                }
         }
     }
 }
