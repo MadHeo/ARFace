@@ -37,13 +37,13 @@ public class ARCoreFaceRegionManager : MonoBehaviour
         {
             subsystem.GetRegionPoses(face.trackableId, Unity.Collections.Allocator.Persistent, ref faceRegions);
 
-            foreach(ARCoreFaceRegionData faceRegion in faceRegions)
+            foreach (ARCoreFaceRegionData faceRegion in faceRegions)
             {
                 ARCoreFaceRegion regionType = faceRegion.region;
 
-                if(regionType == ARCoreFaceRegion.NoseTip)
+                if (regionType == ARCoreFaceRegion.NoseTip)
                 {
-                    if(!noseObject)
+                    if (!noseObject)
                     {
                         noseObject = Instantiate(nosePrefab, sessionOrigin.trackablesParent);
                     }
@@ -52,6 +52,28 @@ public class ARCoreFaceRegionManager : MonoBehaviour
                     noseObject.transform.localRotation = faceRegion.pose.rotation;
                 }
 
+                else if (regionType == ARCoreFaceRegion.ForeheadLeft)
+                {
+                    if (!leftHeadObject)
+                    {
+                        leftHeadObject = Instantiate(leftHeadPrefab, sessionOrigin.trackablesParent);
+                    }
+
+                    leftHeadObject.transform.localPosition = faceRegion.pose.position;
+                    leftHeadObject.transform.localRotation = faceRegion.pose.rotation;
+
+                }
+                else if (regionType == ARCoreFaceRegion.ForeheadRight)
+                {
+                    if (!rightHeadObject)
+                    {
+                        rightHeadObject = Instantiate(rightHeadPrefab, sessionOrigin.trackablesParent);
+                    }
+
+                    rightHeadObject.transform.localPosition = faceRegion.pose.position;
+                    rightHeadObject.transform.localRotation = faceRegion.pose.rotation;
+
+                }
             }
         }
     }
